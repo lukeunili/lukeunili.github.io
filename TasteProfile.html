@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column">
+<label for="points">Bitterkeit:</label><br>
+<input type="range" id="bitter" name="points" min="0" max="7" value="0"><br>
+<label for="points">Fruchtigkeit:</label><br>
+<input type="range" id="fruit" name="points" min="0" max="7" value="0"><br>
+<label for="points">Intensität:</label><br>
+<input type="range" id="intensity" name="points" min="0" max="7" value="0"><br>
+<label for="points">Koffeingehalt:</label><br>
+<input type="range" id="coffein" name="points" min="0" max="7" value="0"><br>
+<label for="points">Röstgrad:</label><br>
+<input type="range" id="roast" name="points" min="0" max="7" value="0"><br>
+
+<button onclick="window.location.reload();">Absenden</button>
+
+  </div>
+
+    <div class="column">
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<canvas id="myChart" width="200" height="200"></canvas>
+<script>
+var bitterValue = document.getElementById("bitter").value;
+var fruitValue = document.getElementById("fruit").value;
+var intensityValue = document.getElementById("intensity").value;
+var coffeinValue = document.getElementById("coffein").value;
+var roastValue = document.getElementById("roast").value;
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: ['Bitterkeit', 'Fruchtigkeit', 'Intensität', 'Koffeingehalt', 'Röstgrad'],
+    datasets: [{
+      label: 'Ihr Kaffeeprofil',
+      data: [bitterValue, fruitValue, intensityValue, coffeinValue, roastValue],
+      fill: true,
+    backgroundColor: 'rgb(55, 134, 92, 0.2)',
+    borderColor: 'rgb(55, 134, 92)',
+    pointBackgroundColor: 'rgb(55, 134, 92)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(55, 134, 92)'
+    },
+        {
+      label: 'Verona',
+      data: [5, 4, 7, 6, 3],
+      fill: true,
+    backgroundColor: 'rgba(169, 43, 126, 0.2)',
+    borderColor: 'rgb(169,43,126)',
+    pointBackgroundColor: 'rgb(169,43,126)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(169,43,126)'
+    },
+        {
+      label: 'Intero',
+      data: [7, 5, 4, 5, 7],
+      fill: true,
+    backgroundColor: 'rgba(245,84,20, 0.2)',
+    borderColor: 'rgb(245,84,20)',
+    pointBackgroundColor: 'rgb(245,84,20)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(245,84,20)'
+    },
+        {
+      label: 'Vienna',
+      data: [6, 6, 5, 7, 5],
+      fill: true,
+    backgroundColor: 'rgba(76,138,14, 0.2)',
+    borderColor: 'rgb(76,138,14)',
+    pointBackgroundColor: 'rgb(76,138,14)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(76,138,14)'
+    },
+        {
+      label: 'Palermo',
+      data: [2, 4, 6, 2, 4],
+      fill: true,
+    backgroundColor: 'rgba(6,66,157, 0.2)',
+    borderColor: 'rgb(6,66,157)',
+    pointBackgroundColor: 'rgb(6,66,157)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(6,66,157)'
+    },
+    ]
+  },
+  options: {
+    title: {
+                display: true,
+                text: 'Demmel Geschmacksvergleich',
+            },
+    legend: {
+      display: true
+    },
+    scale: {
+        ticks: {
+            suggestedMin: 0,
+            suggestedMax: 7
+        }
+    }
+  }
+});
+</script>
+  </div>
+</div>
+
+
+
