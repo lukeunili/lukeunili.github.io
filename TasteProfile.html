@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="TasteProfile.css">
+        <script src="https://use.fontawesome.com/b365a55625.js"></script>
+
     </head>
     <body>
         <div class="row">
@@ -19,7 +21,7 @@
                     <label for="points">Röstgrad:</label>
                     <input type="range" class="slider" id="roast" name="points" min="0" max="7" value="0"><br>
 
-                    <button class="button" onclick="window.location.reload();"><span>Finde deinen Geschmack!</span></button>
+                    <button class="button" onclick="window.location.reload();"><span>Finde deinen Kaffee<i class="fa fa-coffee" aria-hidden="true"></i></span></button>
                 </div>
             </div>
 
@@ -33,6 +35,8 @@
                     var coffeinValue = document.getElementById("coffein").value;
                     var roastValue = document.getElementById("roast").value;
                     var ctx = document.getElementById('myChart');
+
+
                     var myChart = new Chart(ctx, {
                       type: 'radar',
                       data: {
@@ -41,56 +45,37 @@
                           label: 'Ihr Kaffeeprofil',
                           data: [bitterValue, fruitValue, intensityValue, coffeinValue, roastValue],
                           fill: true,
-                        backgroundColor: 'rgb(55, 134, 92, 0.2)',
-                        borderColor: 'rgb(55, 134, 92)',
-                        pointBackgroundColor: 'rgb(55, 134, 92)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(55, 134, 92)'
+                        backgroundColor: 'rgb(83, 42, 42, 0.8)',
+                        borderColor: 'rgb(83, 42, 42)',
+
                         },
                             {
                           label: 'Verona',
                           data: [5, 4, 7, 6, 3],
                           fill: true,
-                        backgroundColor: 'rgba(169, 43, 126, 0.2)',
-                        borderColor: 'rgb(169,43,126)',
-                        pointBackgroundColor: 'rgb(169,43,126)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(169,43,126)'
-                        },
-                            {
-                          label: 'Intero',
-                          data: [7, 5, 4, 5, 7],
-                          fill: true,
-                        backgroundColor: 'rgba(245,84,20, 0.2)',
-                        borderColor: 'rgb(245,84,20)',
-                        pointBackgroundColor: 'rgb(245,84,20)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(245,84,20)'
-                        },
-                            {
-                          label: 'Vienna',
-                          data: [6, 6, 5, 7, 5],
-                          fill: true,
-                        backgroundColor: 'rgba(76,138,14, 0.2)',
-                        borderColor: 'rgb(76,138,14)',
-                        pointBackgroundColor: 'rgb(76,138,14)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(76,138,14)'
+                        backgroundColor: 'rgba(39, 40, 45, 0.2)',
+                        borderColor: 'rgb(39, 40, 45)',
                         },
                             {
                           label: 'Palermo',
                           data: [2, 4, 6, 2, 4],
                           fill: true,
-                        backgroundColor: 'rgba(6,66,157, 0.2)',
-                        borderColor: 'rgb(6,66,157)',
-                        pointBackgroundColor: 'rgb(6,66,157)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(6,66,157)'
+                        backgroundColor: 'rgba(141, 104, 82, 0.2)',
+                        borderColor: 'rgb(141, 104, 82)',
+                        },
+                            {
+                          label: 'Vienna',
+                          data: [6, 6, 5, 7, 5],
+                          fill: true,
+                        backgroundColor: 'rgba(191, 182, 164, 0.2)',
+                        borderColor: 'rgb(191, 182, 164)',
+                        },
+                            {
+                          label: 'Intero',
+                          data: [7, 5, 4, 5, 7],
+                          fill: true,
+                        backgroundColor: 'rgba(251, 239, 223, 0.2)',
+                        borderColor: 'rgb(251, 239, 223)',
                         },
                         ]
                       },
@@ -100,12 +85,18 @@
                                     text: 'Demmel Geschmacksvergleich',
                                 },
                         legend: {
-                          display: true
+                          display: true,
                         },
                         scale: {
                             ticks: {
                                 suggestedMin: 0,
-                                suggestedMax: 7
+                                suggestedMax: 7,
+                                display: false,
+                            }
+                        },
+                        elements: {
+                            point: {
+                                radius: 0
                             }
                         }
                       }
