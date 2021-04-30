@@ -11,17 +11,17 @@
             <div class="column">
                 <div class="slidecontainer">
                     <label for="points">Bitterkeit:</label>
-                    <input type="range" class="slider" id="bitter" name="points" min="0" max="7" value="0" onchange="updateValuebit(this.value)"><br>
+                    <input type="range" class="slider" id="bitter" name="points" min="0" max="7" value="2" onchange="updateValuebit(this.value)"><br>
                     <label for="points">Fruchtigkeit:</label>
-                    <input type="range" class="slider" id="fruit" name="points" min="0" max="7" value="0" onchange="updateValuefru(this.value)"><br>
+                    <input type="range" class="slider" id="fruit" name="points" min="0" max="7" value="2" onchange="updateValuefru(this.value)"><br>
                     <label for="points">Intensität:</label>
-                    <input type="range" class="slider" id="intensity" name="points" min="0" max="7" value="0" onchange="updateValueint(this.value)"><br>
+                    <input type="range" class="slider" id="intensity" name="points" min="0" max="7" value="2" onchange="updateValueint(this.value)"><br>
                     <label for="points">Koffeingehalt:</label>
-                    <input type="range" class="slider" id="coffein" name="points" min="0" max="7" value="0" onchange="updateValuecof(this.value)"><br>
+                    <input type="range" class="slider" id="coffein" name="points" min="0" max="7" value="2" onchange="updateValuecof(this.value)"><br>
                     <label for="points">Röstgrad:</label>
-                    <input type="range" class="slider" id="roast" name="points" min="0" max="7" value="0" onchange="updateValueroa(this.value)"><br>
+                    <input type="range" class="slider" id="roast" name="points" min="0" max="7" value="2" onchange="updateValueroa(this.value)"><br>
 
-                    <button class="button" onclick="window.location.reload();"><span>Finde deinen Kaffee<i class="fa fa-coffee" aria-hidden="true"></i></span></button>
+                    <!--<button class="button" onclick="window.location.reload();"><span>Finde deinen Kaffee<i class="fa fa-coffee" aria-hidden="true"></i></span></button> -->
                 </div>
             </div>
 
@@ -30,35 +30,35 @@
                 <canvas id="myChart" width="200" height="200"></canvas>
                 <script>
 
-                    var bitterValue = 0;
+                    var bitterValue = 2;
                     function updateValuebit(val) {
                         bitterValue = val;
                         myChart.data.datasets[0].data[0] = [val];
                         myChart.update();
                     }
 
-                    var fruitValue = 0;
+                    var fruitValue = 2;
                     function updateValuefru(val) {
                         fruitValue = val;
                         myChart.data.datasets[0].data[1] = [val];
                         myChart.update();
                     }
 
-                    var intensityValue = 0;
+                    var intensityValue = 2;
                     function updateValueint(val) {
                         intensityValue = val;
                         myChart.data.datasets[0].data[2] = [val];
                         myChart.update();
                     }
 
-                    var coffeinValue = 0;
+                    var coffeinValue = 2;
                     function updateValuecof(val) {
                         coffeinValue = val;
                         myChart.data.datasets[0].data[3] = [val];
                         myChart.update();
                     }
 
-                    var roastValue = 0;
+                    var roastValue = 2;
                     function updateValueroa(val) {
                         roastValue = val;
                         myChart.data.datasets[0].data[4] = [val];
